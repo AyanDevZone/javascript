@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number counter </title>
+</head>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        margin-top: 35vh;
+    
+    }
+
+    #num-box {
+        padding: 50px 60px;
+        background-color: #1919e9;
+        margin-bottom: 25px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 30px #435ef5;
+    }
+
+    #num-box #number {
+        font-size: 2rem;
+        font-weight: 600;
+        color: white;
+    }
+
+    #btns {
+        display: flex;
+        gap: 10px;
+    }
+
+    .btns {
+        padding: 5px 20px;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        color: #1919e9;
+        font-weight: 600;
+        border: none;
+    }
+
+    .btns:hover {
+        background-color: #1919e9;
+        color: white;
+        box-shadow: 1px 1px 30px #435ef5;
+
+    }
+</style>
+
+<body>
+    <div id="num-box">
+        <span id="number">0</span>
+    </div>
+    <div id="btns">
+        <button class="btns" id="add-btn">+</button>
+        <button class="btns" id="minus-btn">-</button>
+        <button class="btns" id="reset-btn">Reset</button>
+    </div>
+
+
+    <script>
+        const number = document.getElementById("number");
+        const add = document.getElementById("add-btn");
+        const minus = document.getElementById("minus-btn");
+        const reset = document.getElementById("reset-btn");
+        let count = 0;
+
+        add.onclick = function () {
+            number.innerText =  ++count;
+        }
+
+        minus.onclick = function () {
+            number.innerText = --count;
+        }
+
+        reset.onclick = function () {
+            count = 0;
+            number.innerText = count;
+        }
+    </script>
+</body>
+
+</html>
